@@ -8,6 +8,8 @@ namespace DapperConsoleApp
 {
     class Customers
     {
+
+        // Northwind Veri Tabanındaki Customers tablosunun kolonlarına göre Customers Sınıfı oluşturulmuştur.
         public string CustomerID { get; set; }
         public string CompanyName { get; set; }
         public string ContactName{ get; set; }
@@ -20,6 +22,8 @@ namespace DapperConsoleApp
         public string Phone { get; set; }
         public string Fax { get; set; }
 
+
+        // Konsolda tablodaki elemanların okunması için toString() fonksiyonu yardımıyla string'e çevrildi.
         public string toString()
         {
             Console.WriteLine("----------------------------------------------------------------------------------------------------------------------------------");

@@ -12,6 +12,7 @@ namespace DapperConsoleApp
         static void Main(string[] args)
         {
             //SqlConnection(@"Server=(localdb)\Mysqllocaldb.Northwind;Data Source=.;Initial Catalog=Northwind;Integrated Security=True")
+            //Veri Tabanına Bağlanma İşlemi
             using (IDbConnection dbConnection = new SqlConnection("Server=(localdb)\\Mssqllocaldb;Initial Catalog=Northwind;Integrated Security=SSPI;Trusted_Connection=yes;"))
             {
                 dbConnection.Open();
@@ -36,7 +37,7 @@ namespace DapperConsoleApp
                     }
                     );
 
-                // Veriyi çekme
+                // Veriyi Çekme ve Listeleme İşlemi
                 List<Customers> customerList = dbConnection.Query<Customers>("select * from Customers").ToList();
                 foreach (Customers customer in customerList)
                 {
@@ -45,12 +46,8 @@ namespace DapperConsoleApp
 
                 dbConnection.Close();
 
-
             }
 
-
-
-        Console.WriteLine("Hello World!");
         }
     }
 }
